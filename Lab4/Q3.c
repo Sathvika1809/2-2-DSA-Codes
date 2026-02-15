@@ -1,4 +1,4 @@
-#include <stdio.h>//Lite lo i have to study some
+#include <stdio.h>
 #include <stdlib.h>
 typedef struct Pair_t{
     int val;

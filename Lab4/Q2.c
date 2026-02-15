@@ -21,7 +21,7 @@ void bubblesort(int* arr,int left,int right){
     return;
 }
 void findIncreasingSize(int* arr,int n){
-    int left=0;
+    int left = 0;
     int right = n-1;
     int k=1;
     int size=0;
