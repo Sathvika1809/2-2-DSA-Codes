@@ -1,4 +1,9 @@
 //My own implementation:)
+//Insert - O(1)*O(logn)=O(logn)
+//Delete/Remove top- O(1)*O(logn)=O(logn)
+//Search - O(n)
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -51,6 +56,21 @@ void delete(int* arr,int* n,int idx){
     heapify(arr,*n,idx);
     return;
 }
+/*
+//Recursive form 
+void heapifyup(int* arr,int* n,int i){
+    int p = (i-1)/2;
+    if(p<0)return;
+    if(arr[i]>arr[p]){
+    swap(&arr[i],&arr[p]);
+    }
+    heapifyup(arr,n,p);
+}
+
+
+
+
+*/
 int main(){
     int n;
     scanf("%d",&n);
