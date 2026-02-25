@@ -36,6 +36,22 @@ void heapsort(int* arr,int n){
         heapify(arr,i,0);
     }
 }
+//O(1) time
+int minimum(int* arr,int n){
+    buildMaxHeap(arr,n);
+    return arr[n-1];
+}
+//O(1) time
+int maximum(int* arr,int n){
+    buildMaxHeap(arr,n);
+    return arr[0];
+}
+int search(int* arr,int val){
+   
+}
+void delete(int* arr,int val){
+    int idx = search(arr,val);
+}
 int main(){
     int n;
     scanf("%d",&n);
@@ -43,8 +59,13 @@ int main(){
     for(int i=0;i<n;i++){
         scanf("%d",&arr[i]);
     }
+    int min = minimum(arr,n);
+    int max = maximum(arr,n);
     buildMaxHeap(arr,n);
     heapsort(arr,n);
+    delete(arr,n);
+    printf("Minimum: %d\n",min);
+    printf("Maximum: %d\n",max);
     for(int i=0;i<n;i++){
         printf("%d ",arr[i]);
     }
