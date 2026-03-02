@@ -11,7 +11,7 @@ void threeSum(int* a,int n){
             int sum = a[i]+a[l]+a[r];
             if(sum == 0){
             int fnd = 1;
-            printf("%d %d %d",a[i],a[l],a[r]);
+            printf("%d %d %d\n",a[i],a[l],a[r]);
             while(l<r && a[l]==a[l+1]) l++;
             while(l<r && a[r]==a[r-1])r--;
             l++;

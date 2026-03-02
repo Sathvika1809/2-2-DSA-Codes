@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 int main(){
     int m,n;
@@ -12,7 +13,7 @@ int main(){
     }
     int a1,b1,a2,b2;
     scanf("%d %d %d %d",&a1,&b1,&a2,&b2);
-    int sum = 0;
+    int sum =0;
     for(int i=a1;i<=a2;i++){
         for(int j=b1;j<=b2;j++){
             sum+=arr[i][j];
@@ -26,7 +27,7 @@ int main(){
     }
     for(int i=1;i<=m;i++){
         for(int j=1;j<=n;j++){
-            P[i][j] = arr[i][j]+P[i-1][j]+P[i][j-1]-P[i-1][j-1];
+            P[i][j]=arr[i][j]+P[i-1][j]+P[i][j-1]-P[i-1][j-1];
         }
     }
     for(int i=1;i<=m;i++){
@@ -35,8 +36,7 @@ int main(){
         }
         printf("\n");
     }
-    printf("\n");
-    printf("Sum: %d\n",sum);
+    printf("Sum = %d\n",sum);
 
     return 0;
 }

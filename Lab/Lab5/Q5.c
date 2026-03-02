@@ -10,7 +10,7 @@ void bubble(int*a,int* d,int n){
     int swapped = 0;
     do{
         swapped = 0;
-    for(int i=0;i<n;i++){
+    for(int i=0;i<n-1;i++){
         if(d[i+1]!=d[i]&&d[i+1]<d[i]){
             swap(&a[i],&a[i+1]);
             swap(&d[i],&d[i+1]);

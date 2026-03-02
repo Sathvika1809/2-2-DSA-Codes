@@ -1,25 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-
-void bubble(int* arr,int n){
-    for(int i=0;i<n;i++){
-        int swapped  = 0;
-        for(int j=0;j<n-i-1;j++){
-            if(arr[j]>arr[j+1]){
-                int t = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = t;
-                swapped = 1;
-            }
-        }
-        if(!swapped){
-            break;
-        }
-    }
+void swap(int* a,int* b){
+    int t = *a;
+    *a=*b;
+    *b=t;
 }
-int findKthLargest(int* arr,int n,int k){
-    int pivot 
+int partition(int* a,int lo,int hi){
+    int pivot = a[lo];
+    int left = lo+1,right = hi;
+    while(1){
+        while(left<=hi && a[left]<pivot)left++;
+        while(right>=lo && a[right]>pivot)right--;
+        if(left>=right)break;
+        swap(&a[left],&a[right]);
+    }
+    swap(&a[lo],&a[right]);
+    return right;
+}
+int findKthLargest(int* a,int n,int k){
+    
+    int lo = 0,hi = n-1;
+    int t = n-k;
+    while(1){
+        int p = partition(a,lo,hi);
+        if(p==t) return a[p];
+        if(p<t) lo=p+1;
+        else hi=p-1;
+    }
+    return -1;
 }
 int main(){
     int n;
@@ -31,6 +40,7 @@ int main(){
     int k;
     scanf("%d",&k);
     //bubble(arr,n);
-
+    printf("%d\n",findKthLargest(arr,n,k));
+    
     return 0;
 }
