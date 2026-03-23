@@ -49,14 +49,14 @@ int partition(int* arr,int l,int r){
     for(int j=l;j<r;j++){
         if(arr[j]<=pivot){
             swap(&arr[i],&arr[j]);
-            i++;
+            i++; //i is the idx till the elements are less than pivot
         }
     }
-    swap(&arr[i],&arr[r]);
+    swap(&arr[i],&arr[r]);//Swap arr[i] with pivot as arr[i] makes left side less than pivot and right>pivot
     return i;
 }
 int QuickSelect(int* arr,int l,int r,int k){
-    if(l<=r){
+    if(l<r){
         int pivotIdx = partition(arr,l,r);
         if(pivotIdx == k) return arr[pivotIdx];
         else if(pivotIdx > k) return QuickSelect(arr,l,pivotIdx-1,k);

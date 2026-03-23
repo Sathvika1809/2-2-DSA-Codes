@@ -64,7 +64,7 @@ int main(){
             pop(stk);
         }else if(op == 3){
             if(isEmpty(stk)){
-                printf("Stack is Empty\n");
+                printf("Stack Empty\n");
                 continue;
             }
             printf("Minimum: %d\n",peek(stk)->ss);

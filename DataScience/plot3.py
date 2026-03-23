@@ -1,14 +1,12 @@
+#Grid Lines
 import matplotlib.pyplot as plt
-x = [1,2,3,4]
-y1 = [10,20,30,40]
-y2 = [15,25,35,45]
-#y = [3,6,9,12]
-plt.plot(x,y1,label = "Line 1")
-plt.plot(x,y2,label = "Line 2")
-# plt.plot(x,y,color = 'red',linestyle = '--',marker = 'o')
-# plt.title("Styled Line Plot")
-
-plt.legend()
-plt.title("Multiple Lines")
-#plt.bar(x,y1)
+import numpy as np
+#grid() = helps make plots easier to read by adding reference Lines
+x = [1,2,3,4,5]
+y = [5,10,15,20,25]
+plt.grid(axis="y",linewidth=2,
+         color="lightgray",
+         linestyle='dashed',
+         )
+plt.plot(x,y)
 plt.show()

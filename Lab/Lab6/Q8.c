@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#define MAX_SIZE 1000
+#define MAX_SIZE 10000
 int topIdx=-1;
 int isEmpty(int* st){
     return topIdx==-1;

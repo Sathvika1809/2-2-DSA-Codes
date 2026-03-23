@@ -8,6 +8,7 @@ void swap(Interval* arr1,Interval* arr2){
     Interval temp = *arr1;
     *arr1 = *arr2;
     *arr2 = temp;
+    return;
 }
 Interval merge(Interval arr,Interval yy){
     Interval newList;

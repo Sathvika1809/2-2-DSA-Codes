@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 print(pd.__version__)
 
-df = pd.read_csv(r'D:\ML files\diabetes.csv')
+df = pd.read_csv("diabetes.csv")
 #print(df.head())
 print(df.info())#Prints concise summary(non-null entries,datatype of each col)
 print(df.isnull().sum())#Returns no.of missing values per column

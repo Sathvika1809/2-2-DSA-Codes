@@ -24,6 +24,7 @@ void bubble(int*a,int* d,int n){
     }
 }
 }while(swapped);
+return;
 }
 int divisor(int n){
     int sum = 0;

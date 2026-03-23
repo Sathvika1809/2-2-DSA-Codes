@@ -73,7 +73,6 @@ Node* deleteNode(Node* root,int x){
         root->right = deleteNode(root->right,next->data);
     }
     return root;
-    
 }
 Node* search(Node* root,int x){
     if(root == NULL)return NULL;
