@@ -10,7 +10,7 @@ vector<int>adj[10005];
 bool visited[10005];
 
 void bfs(int node){
-    queue<int>a;
+    queue<int>q;
     if(visited[node])return;
     visited[node] = true;
     q.push(node);
