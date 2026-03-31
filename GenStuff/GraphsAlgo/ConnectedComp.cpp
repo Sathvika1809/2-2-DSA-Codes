@@ -1,3 +1,7 @@
+//TC: O(V+E)
+//SC: space for adj and visited
+
+
 #include <bits/stdc++.h>
 using namespace std;
 vector<int>adj[10005];

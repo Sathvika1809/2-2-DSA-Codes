@@ -3,14 +3,13 @@
 #define MAX 10000
 int heap[MAX];
 int sz = 0;
-int k;
 void swap(int* a,int* b){
     int t = *a;
     *a = *b;
     *b = t;
 }
 void heapifyUp(int idx){
-    if(idx<=0)return;
+    if(idx<=0) return;
     int parent = (idx-1)/2;
     if(heap[parent]>heap[idx]){
         swap(&heap[parent],&heap[idx]);
@@ -19,7 +18,7 @@ void heapifyUp(int idx){
     return;
 }
 void heapifyDown(int idx){
-    if(2*idx+1>=sz)return;
+    if(2*idx+1>=sz) return;
     int left = 2*idx+1;
     int right = 2*idx+2;
     int smallest = left;
@@ -31,7 +30,6 @@ void heapifyDown(int idx){
         heapifyDown(smallest);
     }
     return;
-    
 }
 void removeMin(){
     heap[0] = heap[sz-1];
@@ -43,9 +41,9 @@ void insert(int val){
     heapifyUp(sz-1);
 }
 int main(){
-    //smallest in that size k is kth largest overall
     int k,n;
     scanf("%d %d",&k,&n);
+   
     for(int i=0;i<n;i++){
         int x;
         scanf("%d",&x);
@@ -58,6 +56,6 @@ int main(){
         if(sz<k) printf("-1 ");
         else printf("%d ",heap[0]);
     }
-    return 0;
 
+    return 0;
 }

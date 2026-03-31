@@ -21,7 +21,7 @@ Pair dequeue(){
     return q[front++];
 }
 int isEmpty(){
-    return (front == -1||front>back);
+    return (front == -1||front > back);
 }
 int main(){
     int m,n;

@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #define MAX 10000
 int heap[MAX];
-int sz = 0;
-int k;
+int sz=0;
 void swap(int* a,int* b){
     int t = *a;
     *a = *b;
@@ -33,31 +32,36 @@ void heapifyDown(int idx){
     return;
     
 }
-void removeMin(){
+int removeMin(){
+    int val = heap[0];
     heap[0] = heap[sz-1];
     sz--;
     heapifyDown(0);
+    return val;
 }
 void insert(int val){
     heap[sz++] = val;
     heapifyUp(sz-1);
 }
+int findCost(){
+    int totCost = 0;
+    while(sz>1){
+    int a = removeMin();
+    int b = removeMin();
+    int val = a+b;
+    insert(val);
+    totCost+=val;
+    }
+    return totCost;
+}
 int main(){
-    //smallest in that size k is kth largest overall
-    int k,n;
-    scanf("%d %d",&k,&n);
-    for(int i=0;i<n;i++){
+    int N;
+    scanf("%d",&N);
+    for(int i=0;i<N;i++){
         int x;
         scanf("%d",&x);
-        if(sz<k){
-            insert(x);
-        }else if(x>heap[0]){
-            removeMin();
-            insert(x);
-        }
-        if(sz<k) printf("-1 ");
-        else printf("%d ",heap[0]);
+        insert(x);
     }
+    printf("%d\n",findCost());
     return 0;
-
 }

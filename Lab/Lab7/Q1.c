@@ -7,6 +7,7 @@ int peek(int* stk1,int* stk2){
     if(top1 == -1)return -1;
     return stk1[top1];
 }
+
 int dequeue(int* stk1,int* stk2){
     if(top1 == -1) return -1;
     int val = peek(stk1,stk2);
