@@ -15,19 +15,7 @@ Node* createNode(int val){
     newNode->right = NULL;
     return newNode;
 }
-void findCount(Node* root,int l,int r,int* cnt){
-    if(!root)return;
-    if(root->data>=l){
-        findCount(root->left,l,r,cnt);
-    }
-    if(root->data >= l && root->data <= r){
-        (*cnt)++;
-    }
-    if(root->data<=r){
-        findCount(root->right,l,r,cnt);
-    }
 
-}
 Node* insert(Node* root,int val){
     
     if(!root) return createNode(val);
@@ -50,7 +38,19 @@ Node* buildBST(int* a,int n){
     }
     return root;
 }
+void findCount(Node* root,int l,int r,int* cnt){
+    if(!root)return;
+    if(root->data>=l){
+        findCount(root->left,l,r,cnt);
+    }
+    if(root->data >= l && root->data <= r){
+        (*cnt)++;
+    }
+    if(root->data<=r){
+        findCount(root->right,l,r,cnt);
+    }
 
+}
 int main(){
     int n;
     scanf("%d",&n);

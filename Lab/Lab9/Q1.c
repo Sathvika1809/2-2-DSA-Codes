@@ -9,7 +9,7 @@ typedef struct Node{
 
 Node* createNode(int val);
 Node* insert(Node* root,Node* newNode);
-Node* deleteNode(Node* root,int val);
+//Node* deleteNode(Node* root,int val);
 Node* buildBST(int* a,int n);
 void inorderTraversal(Node* root);
 void inorderTraversal(Node* root){
