@@ -7,6 +7,7 @@ typedef struct Node{
     struct Node* right;
 }Node;
 
+
 Node* createNode(int val);
 Node* insert(Node* root,Node* newNode);
 //Node* deleteNode(Node* root,int val);

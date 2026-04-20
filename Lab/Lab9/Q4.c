@@ -45,7 +45,9 @@ Node* q[1000];
 void enqueue(Node* x){
     if(front == -1){
         front = back = 0;
-    }else{back++;}
+    }else{
+        back++;
+    }
         q[back]=x;
 }
 void dequeue(){
@@ -68,7 +70,7 @@ int main(){
     int dir = 1;
     while(!isEmpty()){
         int l = front;
-        int r = back-1;
+        int r = back;
         int size = r-l+1;
         Node* temp[10000];
         for(int i=0;i<size;i++){
@@ -89,8 +91,10 @@ int main(){
         if(temp[i]->right)enqueue(temp[i]->right);
     }
     for(int i=0;i<size;i++){
-        dir*=-1;
+        dequeue();
     }
+        dir*=-1;
+    
 }
     printf("\n");
     return 0;

@@ -67,8 +67,6 @@ int main(){
     for(int i=0;i<n;i++){
         printf("%d ",CountChildren(find(root,a[i]))-1);
     }
-    CountChildren(root);
-
 
     return 0;
 }

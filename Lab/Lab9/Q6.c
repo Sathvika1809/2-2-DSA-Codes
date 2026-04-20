@@ -56,7 +56,7 @@ int findSum(Node* root,int A,int B){
     int aa = find(root,A,a,0);
     int bb = find(root,B,b,0);
     int idx = 0;
-    for(int i=0;i<aa&&i<<bb;i++){
+    for(int i=0;i<aa&&i<bb;i++){
         if(a[i]==b[i]){
             idx = i;
         }
